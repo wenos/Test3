@@ -52,20 +52,20 @@ public class AppTest
     }
 
     public void testMultiply() {
-        int[][] matrix1 = {{1, 2}, {3, 4}};
-        int[][] matrix2 = {{5, 6}, {7, 8}};
+        Double[][] matrix1 = {{1D, 2D}, {3D, 4D}};
+        Double[][] matrix2 = {{5D, 6D}, {7D, 8D}};
 
-        int[][] expected = {{19, 22}, {43, 50}};
-        int[][] result = MatrixCalculator.multiply(matrix1, matrix2);
+        Double[][] expected = {{19D, 22D}, {43D, 50D}};
+        Double[][] result = MatrixCalculator.multiply(matrix1, matrix2);
 
         assertArrayEquals(expected, result);
     }
 
     public void testInvalidDimensions() {
-        int[][] matrix1 = {{1, 2, 3}, {4, 5, 6}};
-        int[][] matrix2 = {{7, 8}, {9, 10}};
+        Double[][] matrix1 = {{1D, 2D, 3D}, {4D, 5D, 6D}};
+        Double[][] matrix2 = {{7D, 8D}, {9D, 10D}};
 
-        MatrixCalculator.multiply(matrix1, matrix2);
+        assertNull(MatrixCalculator.multiply(matrix1, matrix2));
     }
 
 }
