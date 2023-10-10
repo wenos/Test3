@@ -75,7 +75,19 @@ public class MatrixCalculator {
     }
 
     public static Double[][] addMatrices(Double[][] matrix1, Double[][] matrix2) {
-        return new Double[0][];
+        if (matrix1.length != matrix2.length || matrix1[0].length != matrix2[0].length)
+            return null;
+
+        int rows = matrix1.length;
+        int cols = matrix1[0].length;
+
+        Double[][] result = new Double[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+        return result;
     }
 }
 

@@ -61,7 +61,7 @@ public class AppTest
                 {7D, 8D, 9D}};
         Double[][] expectedResult = {
                 {2D, 4D, 6D},
-                {4D, 10D, 12D},
+                {8D, 10D, 12D},
                 {14D, 16D, 18D}
         };
 
