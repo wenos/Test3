@@ -41,6 +41,29 @@ public class MatrixCalculator {
     }
 
 
+    public static Double[][] multiply(Double[][] matrix1, Double[][] matrix2) {
+        int rows1 = matrix1.length;
+        int cols1 = matrix1[0].length;
+        int rows2 = matrix2.length;
+        int cols2 = matrix2[0].length;
+
+        if (cols1 != rows2) return null;
+
+        Double[][] result = new Double[rows1][cols2];
+
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < cols2; j++) {
+                result[i][j] = 0.0;
+                for (int k = 0; k < cols1; k++) {
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
+
+
     public static Double[] cramerRule(Double[][] matrix) {
         int n = matrix.length;
         Double[] solutions = new Double[n];
@@ -90,6 +113,18 @@ public class MatrixCalculator {
         return result;
     }
 
+
+
+    public static Double[][] transpose(Double[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        Double[][] result = new Double[cols][rows];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[j][i] = matrix[i][j];
+
     public static Double[][] matrixSubtraction (Double[][] matrix1, Double[][] matrix2) {
         int rows = matrix1.length;
         int cols = matrix1[0].length;
@@ -105,7 +140,6 @@ public class MatrixCalculator {
                 result[i][j] = matrix1[i][j] - matrix2[i][j];
             }
         }
-
         return result;
     }
 
@@ -141,8 +175,8 @@ public class MatrixCalculator {
 
 
 
-
 }
+
 
 
 

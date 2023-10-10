@@ -7,6 +7,8 @@ import org.junit.Assert;
 
 import static org.junit.Assert.assertArrayEquals;
 
+import static org.junit.Assert.assertArrayEquals;
+
 /**
  * Unit test for simple App.
  */
@@ -94,6 +96,23 @@ public class AppTest
     }
 
 
+    public void testMultiply() {
+        Double[][] matrix1 = {{1D, 2D}, {3D, 4D}};
+        Double[][] matrix2 = {{5D, 6D}, {7D, 8D}};
+
+        Double[][] expected = {{19D, 22D}, {43D, 50D}};
+        Double[][] result = MatrixCalculator.multiply(matrix1, matrix2);
+
+        assertArrayEquals(expected, result);
+    }
+
+    public void testInvalidDimensions() {
+        Double[][] matrix1 = {{1D, 2D, 3D}, {4D, 5D, 6D}};
+        Double[][] matrix2 = {{7D, 8D}, {9D, 10D}};
+
+        assertNull(MatrixCalculator.multiply(matrix1, matrix2));
+    }
+
     public void testAddMatrices() {
         Double[][] matrix1 = {
                 {1D, 2D, 3D},
@@ -127,7 +146,6 @@ public class AppTest
 
         assertNull(result);
     }
-
     public void testAddMatricesWrongColumnsCount() {
         Double[][] matrix1 = {
                 {1D, 2D},
