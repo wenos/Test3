@@ -4,6 +4,8 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import static org.junit.Assert.assertArrayEquals;
+
 /**
  * Unit test for simple App.
  */
@@ -48,4 +50,53 @@ public class AppTest
         Double traceMatrix = MatrixCalculator.traceMatrix(matrix);
         assertNull(traceMatrix);
     }
+
+    public void testMatrixSubtraction() {
+        Double[][] matrix1 = {
+                {1.0, 2.0, 3.0},
+                {4.0, 5.0, 6.0},
+                {7.0, 8.0, 9.0}
+        };
+
+        Double[][] matrix2 = {
+                {9.0, 8.0, 7.0},
+                {6.0, 5.0, 4.0},
+                {3.0, 2.0, 1.0}
+        };
+
+        Double[][] expectedResult = {
+                {-8.0, -6.0, -4.0},
+                {-2.0, 0.0, 2.0},
+                {4.0, 6.0, 8.0}
+        };
+
+        Double[][] result = MatrixCalculator.matrixSubtraction(matrix1, matrix2);
+
+        assertArrayEquals(expectedResult, result);
+    }
+
+    public void testMatrixSubtractionBad() {
+        Double[][] matrix1 = {
+                {1.0, 2.0, 3.0},
+                {4.0, 5.0, 6.0},
+                {7.0, 8.0, 9.0}
+        };
+
+        Double[][] matrix2 = {
+                {9.0, 8.0, 7.0},
+                {6.0, 5.0, 4.0},
+                {3.0, 2.0, 1.0}
+        };
+
+        Double[][] expectedResult = {
+                {-8.0, -6.0, -4.0},
+                {-2.0, 0.0, 2.0},
+                {4.0, 6.0, 8.0}
+        };
+
+        Double[][] result = MatrixCalculator.matrixSubtraction(matrix1, matrix2);
+
+        assertNull(result);
+    }
+
 }

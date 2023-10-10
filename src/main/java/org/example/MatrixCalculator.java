@@ -40,6 +40,10 @@ public class MatrixCalculator {
         return ans;
     }
 
+    public static Double[][] matrixSubtraction (Double[][] matrix1, Double[][] matrix2) {
+        Double[][] t = matrix1;
+        return t;
+    }
     
 
 }
