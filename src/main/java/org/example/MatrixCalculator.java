@@ -40,6 +40,56 @@ public class MatrixCalculator {
         return ans;
     }
 
+
+    public static Double[] cramerRule(Double[][] matrix) {
+        int n = matrix.length;
+        Double[] solutions = new Double[n];
+
+        Double[][] coefficients = new Double[n][n];
+        Double[] constants = new Double[n];
+
+        for (int i = 0; i < n; i++) {
+            System.arraycopy(matrix[i], 0, coefficients[i], 0, n);
+            constants[i] = matrix[i][n];
+        }
+
+        Double mainDeterminant = determinantMatrix(coefficients);
+
+        if (mainDeterminant == null || mainDeterminant == 0)
+            return null;
+
+        for (int i = 0; i < n; i++) {
+            Double[][] modifiedMatrix = new Double[n][n];
+            for (int j = 0; j < n; j++) {
+                System.arraycopy(coefficients[j], 0, modifiedMatrix[j], 0, n);
+            }
+
+            for (int j = 0; j < n; j++) {
+                modifiedMatrix[j][i] = constants[j];
+            }
+
+            Double determinant = determinantMatrix(modifiedMatrix);
+            solutions[i] = determinant / mainDeterminant;
+        }
+
+        return solutions;
+    }
+
+    public static Double[][] addMatrices(Double[][] matrix1, Double[][] matrix2) {
+        if (matrix1.length != matrix2.length || matrix1[0].length != matrix2[0].length)
+            return null;
+
+        int rows = matrix1.length;
+        int cols = matrix1[0].length;
+        Double[][] result = new Double[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+        return result;
+    }
+
     public static Double[][] matrixSubtraction (Double[][] matrix1, Double[][] matrix2) {
         int rows = matrix1.length;
         int cols = matrix1[0].length;
@@ -91,4 +141,11 @@ public class MatrixCalculator {
 
 
 
+
 }
+
+
+
+
+
+
