@@ -1,6 +1,6 @@
 package org.example;
 
-public class MatrixCalculator {
 
+public class MatrixCalculator {
 
 }

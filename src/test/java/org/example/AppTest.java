@@ -39,7 +39,13 @@ public class AppTest
 
     public void testTraceMatrix2x2() {
         double[][] matrix = {{2, 3}, {4, 5}};
-        double traceMatrix = MatrixCalculator.traceMatrix(matrix);
-        assertEquals(7, traceMatrix);
+        Double traceMatrix = MatrixCalculator.traceMatrix(matrix);
+        assertEquals(7.0, traceMatrix);
+    }
+
+    public void testTraceMatrix2x2Bad() {
+        double[][] matrix = {{2, 3, 3}, {4, 5, 4}};
+        Double traceMatrix = MatrixCalculator.traceMatrix(matrix);
+        assertNull(traceMatrix);
     }
 }
