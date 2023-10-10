@@ -4,6 +4,8 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import static org.junit.Assert.assertArrayEquals;
+
 /**
  * Unit test for simple App.
  */
@@ -48,4 +50,22 @@ public class AppTest
         Double traceMatrix = MatrixCalculator.traceMatrix(matrix);
         assertNull(traceMatrix);
     }
+
+    public void testMultiply() {
+        int[][] matrix1 = {{1, 2}, {3, 4}};
+        int[][] matrix2 = {{5, 6}, {7, 8}};
+
+        int[][] expected = {{19, 22}, {43, 50}};
+        int[][] result = MatrixCalculator.multiply(matrix1, matrix2);
+
+        assertArrayEquals(expected, result);
+    }
+
+    public void testInvalidDimensions() {
+        int[][] matrix1 = {{1, 2, 3}, {4, 5, 6}};
+        int[][] matrix2 = {{7, 8}, {9, 10}};
+
+        MatrixCalculator.multiply(matrix1, matrix2);
+    }
+
 }
