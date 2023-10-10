@@ -40,6 +40,7 @@ public class MatrixCalculator {
         return ans;
     }
 
-    
-
+    public static Double[] cramerRule(Double[][] matrix) {
+        return new Double[0];
+    }
 }

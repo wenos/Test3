@@ -38,4 +38,11 @@ public class CramerRuleSteps {
         Double[] expectedAnswer = dataTable.asList(Double.class).toArray(Double[]::new);
         Assert.assertArrayEquals(expectedAnswer, answer);
     }
+
+    @Then("Тогда определитель равен нулю и получаем null")
+    public void zeroDeterminant() {
+        Assert.assertNull(answer);
+    }
+
+
 }
