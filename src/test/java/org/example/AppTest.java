@@ -40,19 +40,19 @@ public class AppTest
     {
         assertTrue( true );
     }
-//
-//
-//    public void testTraceMatrix2x2() {
-//        Double[][] matrix = {{2D, 3D}, {4D, 5D}};
-//        Double traceMatrix = MatrixCalculator.traceMatrix(matrix);
-//        assertEquals(7.0, traceMatrix);
-//    }
-//
-//    public void testTraceMatrix2x2Bad() {
-//        Double[][] matrix = {{2D, 3D, 3D}, {4D, 5D, 4D}};
-//        Double traceMatrix = MatrixCalculator.traceMatrix(matrix);
-//        assertNull(traceMatrix);
-//    }
+
+
+    public void testTraceMatrix2x2() {
+        Double[][] matrix = {{2D, 3D}, {4D, 5D}};
+        Double traceMatrix = MatrixCalculator.traceMatrix(matrix);
+        assertEquals(7.0, traceMatrix);
+    }
+
+    public void testTraceMatrix2x2Bad() {
+        Double[][] matrix = {{2D, 3D, 3D}, {4D, 5D, 4D}};
+        Double traceMatrix = MatrixCalculator.traceMatrix(matrix);
+        assertNull(traceMatrix);
+    }
 
     public void testMatrixSubtraction() {
         Double[][] matrix1 = {
