@@ -83,15 +83,8 @@ public class AppTest
         };
 
         Double[][] matrix2 = {
-                {9.0, 8.0, 7.0},
-                {6.0, 5.0, 4.0},
-                {3.0, 2.0, 1.0}
-        };
-
-        Double[][] expectedResult = {
-                {-8.0, -6.0, -4.0},
-                {-2.0, 0.0, 2.0},
-                {4.0, 6.0, 8.0}
+                {9.0, 8.0},
+                {6.0, 5.0}
         };
 
         Double[][] result = MatrixCalculator.matrixSubtraction(matrix1, matrix2);

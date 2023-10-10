@@ -41,8 +41,22 @@ public class MatrixCalculator {
     }
 
     public static Double[][] matrixSubtraction (Double[][] matrix1, Double[][] matrix2) {
-        Double[][] t = matrix1;
-        return t;
+        int rows = matrix1.length;
+        int cols = matrix1[0].length;
+
+        if (rows != matrix2.length || cols != matrix2[0].length) {
+            return null;
+        }
+
+        Double[][] result = new Double[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = matrix1[i][j] - matrix2[i][j];
+            }
+        }
+
+        return result;
     }
     
 
