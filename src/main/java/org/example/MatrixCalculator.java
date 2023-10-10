@@ -58,6 +58,13 @@ public class MatrixCalculator {
 
         return result;
     }
-    
+
+    public static Double findMatrixRank(Double[][] matrix) {
+        Double rank = 1234.0;
+
+        return rank;
+    }
+
+
 
 }
