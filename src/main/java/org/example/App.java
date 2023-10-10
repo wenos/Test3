@@ -53,22 +53,22 @@ public class App {
             }
         }
     }
-    public static double[][] inputMatrix() {
+    public static Double[][] inputMatrix() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размерность матрицы");
         int n = scanner.nextInt(), m = scanner.nextInt();
-        double[][] matrix = new double[n][m];
+        Double[][] matrix = new Double[n][m];
         for (int i = 0; i < n; ++i){
             for (int j = 0; j < m; ++j) {
-                matrix[i][j] = scanner.nextInt();
+                matrix[i][j] = scanner.nextDouble();
             }
         }
         return matrix;
     }
-    public static void outputMatrix(double[][] matrix) {
-        for (double[] ints : matrix) {
+    public static void outputMatrix(Double[][] matrix) {
+        for (Double[] doubles : matrix) {
             for (int j = 0; j < matrix[0].length; ++j) {
-                System.out.print(ints[j] + " ");
+                System.out.print(doubles[j] + " ");
             }
             System.out.println();
         }

@@ -8,12 +8,12 @@ import org.junit.Assert;
 import java.util.List;
 
 public class DeterminantSteps {
-    private double[][] matrix;
+    private Double[][] matrix;
     private Double determinant;
 
     @Given("У меня есть матрица {int}x{int}")
     public void iHaveAMatrix(int rows, int cols) {
-        matrix = new double[rows][cols];
+        matrix = new Double[rows][cols];
     }
 
     @Given("Я заполняю ее элементами:")
@@ -22,7 +22,7 @@ public class DeterminantSteps {
         for (int i = 0; i < table.size(); i++) {
             List<String> row = table.get(i);
             for (int j = 0; j < row.size(); j++) {
-                matrix[i][j] = Integer.parseInt(row.get(j));
+                matrix[i][j] = Double.parseDouble(row.get(j));
             }
         }
     }
@@ -38,7 +38,5 @@ public class DeterminantSteps {
     }
 
 
-    @Given("У меня есть матрица {int}x{int}")
-    public void уМеняЕстьМатрицаX(int arg0, int arg1) {
-    }
+
 }

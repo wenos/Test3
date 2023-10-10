@@ -1,8 +1,7 @@
 package org.example;
 
-
 public class MatrixCalculator {
-    public static Double traceMatrix(double[][] matrix) {
+    public static Double traceMatrix(Double[][] matrix) {
         if (matrix.length != matrix[0].length) {
             return null;
         }
@@ -13,14 +12,14 @@ public class MatrixCalculator {
         return result;
     }
 
-    public static Double determinantMatrix(double[][] matrix) {
+    public static Double determinantMatrix(Double[][] matrix) {
         if (matrix.length != matrix[0].length) {
             return null;
         }
         int n = matrix.length;
         if(n == 1) return matrix[0][0];
         double ans = 0;
-        double B[][] = new double[n-1][n-1];
+        Double B[][] = new Double[n-1][n-1];
         int l = 1;
         for(int i = 0; i < n; ++i){
             int x = 0, y = 0;
@@ -39,8 +38,8 @@ public class MatrixCalculator {
             l *= (-1);
         }
         return ans;
-
     }
 
+    
 
 }
