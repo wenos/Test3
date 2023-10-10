@@ -61,4 +61,19 @@ public class MatrixCalculator {
         return result;
     }
 
+    public static Double[][] transpose(Double[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        Double[][] result = new Double[cols][rows];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[j][i] = matrix[i][j];
+            }
+        }
+
+        return result;
+    }
+
 }
