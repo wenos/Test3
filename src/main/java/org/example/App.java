@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -44,6 +45,7 @@ public class App {
                     break;
                 }
                 case 8: {
+                    System.out.println("Решение системы: " + Arrays.toString(MatrixCalculator.cramerRule(inputMatrix())));
                     break;
                 }
                 case 0: {

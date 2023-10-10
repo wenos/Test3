@@ -1,8 +1,5 @@
 package org.example;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class MatrixCalculator {
     public static Double traceMatrix(Double[][] matrix) {
         if (matrix.length != matrix[0].length) {
@@ -76,4 +73,14 @@ public class MatrixCalculator {
 
         return solutions;
     }
+
+    public static Double[][] addMatrices(Double[][] matrix1, Double[][] matrix2) {
+        return new Double[0][];
+    }
 }
+
+
+
+
+
+
