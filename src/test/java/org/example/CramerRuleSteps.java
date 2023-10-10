@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
+import java.util.*;
 import java.util.List;
 
 public class CramerRuleSteps {
@@ -35,14 +36,17 @@ public class CramerRuleSteps {
 
     @Then("В результате должен получить:")
     public void cramerResultAssertEquals(io.cucumber.datatable.DataTable dataTable) {
-        Double[] expectedAnswer = dataTable.asList(Double.class).toArray(Double[]::new);
-        Assert.assertArrayEquals(expectedAnswer, answer);
+        List<Double> expected = new ArrayList<>();
+        for (List<String> row : dataTable.asLists()) {
+            for (String cell : row) {
+                expected.add(Double.parseDouble(cell));
+            }
+        }
+        Assert.assertArrayEquals(expected.toArray(Double[]::new), answer);
     }
 
     @Then("Тогда определитель равен нулю и получаем null")
     public void zeroDeterminant() {
         Assert.assertNull(answer);
     }
-
-
 }

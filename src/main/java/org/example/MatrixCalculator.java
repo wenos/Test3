@@ -1,5 +1,8 @@
 package org.example;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class MatrixCalculator {
     public static Double traceMatrix(Double[][] matrix) {
         if (matrix.length != matrix[0].length) {
@@ -41,6 +44,36 @@ public class MatrixCalculator {
     }
 
     public static Double[] cramerRule(Double[][] matrix) {
-        return new Double[0];
+        int n = matrix.length;
+        Double[] solutions = new Double[n];
+
+        Double[][] coefficients = new Double[n][n];
+        Double[] constants = new Double[n];
+
+        for (int i = 0; i < n; i++) {
+            System.arraycopy(matrix[i], 0, coefficients[i], 0, n);
+            constants[i] = matrix[i][n];
+        }
+
+        Double mainDeterminant = determinantMatrix(coefficients);
+
+        if (mainDeterminant == null || mainDeterminant == 0)
+            return null;
+
+        for (int i = 0; i < n; i++) {
+            Double[][] modifiedMatrix = new Double[n][n];
+            for (int j = 0; j < n; j++) {
+                System.arraycopy(coefficients[j], 0, modifiedMatrix[j], 0, n);
+            }
+
+            for (int j = 0; j < n; j++) {
+                modifiedMatrix[j][i] = constants[j];
+            }
+
+            Double determinant = determinantMatrix(modifiedMatrix);
+            solutions[i] = determinant / mainDeterminant;
+        }
+
+        return solutions;
     }
 }
