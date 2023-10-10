@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 
@@ -38,9 +39,19 @@ public class App {
                     break;
                 }
                 case 6: {
+                    System.out.println("Ввод матрицы:");
+                    Double[][] matrix = inputMatrix();
+                    System.out.println("Транспонированная матрица:");
+                    outputMatrix(MatrixCalculator.transpose(matrix));
                     break;
                 }
                 case 7: {
+                    System.out.println("Ввод первой матрицы:");
+                    Double[][] matrix1 = inputMatrix();
+                    System.out.println("Ввод второй матрицы:");
+                    Double[][] matrix2 = inputMatrix();
+                    System.out.println("Получившаяся матрица:");
+                    outputMatrix(Objects.requireNonNull(MatrixCalculator.multiply(matrix1, matrix2)));
                     break;
                 }
                 case 8: {
