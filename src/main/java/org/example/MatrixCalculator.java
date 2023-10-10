@@ -124,8 +124,12 @@ public class MatrixCalculator {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 result[j][i] = matrix[i][j];
+            }
+        }
 
-    public static Double[][] matrixSubtraction (Double[][] matrix1, Double[][] matrix2) {
+        return result;
+    }
+    public static Double[][] matrixSubtraction(Double[][] matrix1, Double[][] matrix2) {
         int rows = matrix1.length;
         int cols = matrix1[0].length;
 
@@ -160,7 +164,6 @@ public class MatrixCalculator {
 
             if (!allZeroes) {
                 rank++;
-
                 for (int i = row + 1; i < rowCount; i++) {
                     double factor = matrix[i][row] / matrix[row][row];
                     for (int j = row; j < colCount; j++) {

@@ -24,9 +24,21 @@ public class App {
             int activate = scanner.nextInt();
             switch (activate) {
                 case 1: {
+                    System.out.println("Ввод первой матрицы:");
+                    Double[][] matrix1 = inputMatrix();
+                    System.out.println("Ввод второй матрицы:");
+                    Double[][] matrix2 = inputMatrix();
+                    System.out.println("Получившаяся матрица:");
+                    outputMatrix(MatrixCalculator.addMatrices(matrix1, matrix2));
                     break;
                 }
                 case 2: {
+                    System.out.println("Ввод первой матрицы:");
+                    Double[][] matrix1 = inputMatrix();
+                    System.out.println("Ввод второй матрицы:");
+                    Double[][] matrix2 = inputMatrix();
+                    System.out.println("Получившаяся матрица:");
+                    outputMatrix(MatrixCalculator.matrixSubtraction(matrix1, matrix2));
                     break;
                 }
                 case 3: {
@@ -38,6 +50,7 @@ public class App {
                     break;
                 }
                 case 5: {
+                    System.out.println("Ранг равен: " + MatrixCalculator.findMatrixRank(inputMatrix()));
                     break;
                 }
                 case 6: {
@@ -80,6 +93,10 @@ public class App {
         return matrix;
     }
     public static void outputMatrix(Double[][] matrix) {
+        if(matrix == null) {
+            System.out.println("null");
+            return;
+        }
         for (Double[] doubles : matrix) {
             for (int j = 0; j < matrix[0].length; ++j) {
                 System.out.print(doubles[j] + " ");
