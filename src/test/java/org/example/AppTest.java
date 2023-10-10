@@ -35,4 +35,11 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+
+    public void testTraceMatrix2x2() {
+        double[][] matrix = {{2, 3}, {4, 5}};
+        double traceMatrix = MatrixCalculator.traceMatrix(matrix);
+        assertEquals(7, traceMatrix);
+    }
 }
