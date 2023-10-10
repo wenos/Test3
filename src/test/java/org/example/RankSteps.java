@@ -8,7 +8,6 @@ import org.junit.Assert;
 
 import java.util.List;
 
-import static java.lang.Double.valueOf;
 import static org.junit.Assert.assertEquals;
 
 public class RankSteps {
@@ -16,12 +15,12 @@ public class RankSteps {
     private Double rank;
 
     @Given("У меня есть матрица {int}x{int}")
-        public void iHaveAMatrix(int rows, int cols) {
+        public void aMatrix(int rows, int cols) {
         matrix = new Double[rows][cols];
     }
 
     @And("Я заполняю ее элементами:")
-    public void iHaveEnteredTheElements(io.cucumber.datatable.DataTable dataTable) {
+    public void iFillingMatrix(io.cucumber.datatable.DataTable dataTable) {
         List<List<String>> table = dataTable.asLists();
         for (int i = 0; i < table.size(); i++) {
             List<String> row = table.get(i);

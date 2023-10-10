@@ -60,7 +60,31 @@ public class MatrixCalculator {
     }
 
     public static Double findMatrixRank(Double[][] matrix) {
-        Double rank = 1234.0;
+        int rowCount = matrix.length;
+        int colCount = matrix[0].length;
+        Double rank = 0.0;
+
+        for (int row = 0; row < rowCount; row++) {
+            boolean allZeroes = true;
+
+            for (int col = 0; col < colCount; col++) {
+                if (matrix[row][col] != 0.0) {
+                    allZeroes = false;
+                    break;
+                }
+            }
+
+            if (!allZeroes) {
+                rank++;
+
+                for (int i = row + 1; i < rowCount; i++) {
+                    double factor = matrix[i][row] / matrix[row][row];
+                    for (int j = row; j < colCount; j++) {
+                        matrix[i][j] -= factor * matrix[row][j];
+                    }
+                }
+            }
+        }
 
         return rank;
     }
