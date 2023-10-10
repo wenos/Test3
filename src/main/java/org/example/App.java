@@ -7,7 +7,6 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;
-        MatrixCalculator mathCalculator = new MatrixCalculator();
         while (flag) {
             System.out.println("Выберите действие, которое хотите сделать");
             System.out.println("1 - Сложить две матрицы");
@@ -22,16 +21,17 @@ public class App {
             int activate = scanner.nextInt();
             switch (activate) {
                 case 1: {
-                    outputMatrix(inputMatrix());
                     break;
                 }
                 case 2: {
                     break;
                 }
                 case 3: {
+                    System.out.println("След равен: " + MatrixCalculator.traceMatrix(inputMatrix()));
                     break;
                 }
                 case 4: {
+                    System.out.println("Определитель равен: " + MatrixCalculator.determinantMatrix(inputMatrix()));
                     break;
                 }
                 case 5: {

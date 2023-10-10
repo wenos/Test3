@@ -11,12 +11,12 @@ public class DeterminantSteps {
     private double[][] matrix;
     private Double determinant;
 
-    @Given("I have a {int}x{int} matrix")
+    @Given("У меня есть матрица {int}x{int}")
     public void iHaveAMatrix(int rows, int cols) {
         matrix = new double[rows][cols];
     }
 
-    @Given("I have entered the elements:")
+    @Given("Я заполняю ее элементами:")
     public void iHaveEnteredTheElements(io.cucumber.datatable.DataTable dataTable) {
         List<List<String>> table = dataTable.asLists();
         for (int i = 0; i < table.size(); i++) {
@@ -27,13 +27,18 @@ public class DeterminantSteps {
         }
     }
 
-    @When("I calculate the determinant")
+    @When("Я использую метод подсчета детерминанта")
     public void iCalculateTheDeterminant() {
-        determinant = MatrixCalculator.calculateDeterminant(matrix);
+        determinant = MatrixCalculator.determinantMatrix(matrix);
     }
 
-    @Then("the result should be {Double} on the screen")
+    @Then("В результате должен получить {double}")
     public void theResultShouldBeOnTheScreen(Double expectedDeterminant) {
         Assert.assertEquals(expectedDeterminant, determinant);
+    }
+
+
+    @Given("У меня есть матрица {int}x{int}")
+    public void уМеняЕстьМатрицаX(int arg0, int arg1) {
     }
 }

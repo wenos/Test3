@@ -1,8 +1,9 @@
 Feature: Расчет определителя матрицы
   Scenario: Расчет определителя матрицы 2x2
-    Given I have a 2x2 matrix
-    And I have entered the elements:
-      | 2 | 3 |
-      | 4 | 5 |
-    When I calculate the determinant
-    Then the result should be 2.0 on the screen
+    Given У меня есть матрица 3x3
+    And Я заполняю ее элементами:
+      | 2 | 3 | 20 |
+      | 4 | 5 | 100 |
+      | 12 | -12| 0 |
+    When Я использую метод подсчета детерминанта
+    Then В результате должен получить 3840.0
